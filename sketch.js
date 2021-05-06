@@ -7,14 +7,35 @@ let cnv;
 let points = 0;
 let w = 600;
 let h = 600;
+let img1;
+let img2;
+let img3;
+let img4;
+let img5;
+
+function preload(){
+  img1 = loadImage('Images/Background.png');
+  img2 = loadImage('Images/Mouse.png');
+  img3 = loadImage('Images/MouseClicked.png');
+  img4 = loadImage('Images/Star.png');
+  img5 = loadImage('Images/StarClicked.png');
+}
 
 function setup(){
+  noCursor();
+  // imageMode(CENTER);
   cnv = createCanvas(w,h);
 
   textFont('monospace');
 }
 
+function cursorImage(){
+  image(img2, mouseX, mouseY);
+}
+
 function draw(){
+
+
 
 switch (state) {
   case 'title':
@@ -43,7 +64,7 @@ function title(){
   textSize(80);
 fill(255);
   textAlign(CENTER);
-  text('MY GAME', w/2, h/5);
+  text('STARGAZING', w/2, h/5);
 textSize(30);
   text('click anywhere to start', w/2, h/2);
 }
@@ -53,8 +74,9 @@ function titleMouseClicked(){
 }
 
 function level1(){
-  background(50, 150, 200);
-  text ('click for points', w/2, h - 30);
+  cursorImage();
+  background(img1);
+  text ('click on a shooting star', w/2, h - 30);
 }
 
 function level1MouseClicked(){
