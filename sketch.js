@@ -10,6 +10,7 @@ let h = 600;
 let img1;
 let img2;
 let img3;
+let img4;
 let player;
 let stars = [];
 let t = false;
@@ -18,6 +19,7 @@ function preload(){
   img1 = loadImage('Images/Background.png');
   img2 = loadImage('Images/Star.png');
   img3 = loadImage('Images/StarClicked.png');
+  img4 = loadImage('Images/Player.png');
 }
 
 function setup(){
